@@ -1,0 +1,16 @@
+{% include "base.html" %}
+
+<h2>This is our homepage!!!</h2>
+
+{% for cl in client %}
+<p>{{cl.id}}</p>
+
+<br />
+
+<p>{{cl.name}}</p>
+
+<br />
+
+<p>{{cl.profession}}</p>
+
+{% endfor %}
