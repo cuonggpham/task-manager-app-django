@@ -24,4 +24,8 @@ urlpatterns = [
     #delete 
     path('delete-task/<str:pk>/', views.deleteTask, name='delete-task'),
 
+    #---------REGISTER---------------
+
+    path('register', views.register, name='register'),
+
 ]

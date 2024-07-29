@@ -1,9 +1,34 @@
-{% include "base.html" %}
+{% load static %}
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css'%}"
+    />
+  </head>
+  {% include "base.html" %}
 
-<h2>This is our homepage!!!</h2>
+  <h2>This is our homepage!!!</h2>
 
-<a href="{% url 'create-task' %}"> Create a task </a>
+  <img style="width: 200px" src="{% static 'images/cr7.jpg'%}" />
 
-<br /><br />
+  <br />
+  <br />
+  <br />
+  <br />
 
-<a href="{% url 'view-tasks' %}"> View tasks </a>
+  <a href="{% url 'register' %}"> Register a user </a>
+
+  <br /><br />
+  <br />
+  <br />
+
+  <a href="{% url 'create-task' %}"> Create a task </a>
+
+  <br /><br />
+
+  <a href="{% url 'view-tasks' %}"> View tasks </a>
+
+  <script src="{%static 'js/app.js'%}"></script>
+</html>
