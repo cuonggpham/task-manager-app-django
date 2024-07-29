@@ -1,0 +1,20 @@
+{% include "base.html" %}
+
+<h2>CRUD - READ all tasks</h2>
+
+{% for task in tasks %}
+
+<p>{{task.id}}</p>
+
+<p>{{task.title}}</p>
+<br /><br />
+
+<p>{{task.content}}</p>
+<br /><br />
+<a href="{% url 'create-task' %}"> Create task </a>
+<a href="{% url 'update-task' task.id %}"> Update task </a>
+<a href="{% url 'delete-task' task.id %}"> Delete task </a>
+
+<br /><br />
+
+{% endfor %}

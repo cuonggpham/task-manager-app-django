@@ -10,4 +10,18 @@ urlpatterns = [
 
     path('', views.home),
 
+
+    #---------CRUD operations-------
+    #create
+    path('create-task', views.createTask, name='create-task'),
+
+    #read
+    path('view-tasks', views.viewTasks, name='view-tasks'),
+
+    #update 
+    path('update-task/<str:pk>/', views.updateTask, name='update-task'),
+
+    #delete 
+    path('delete-task/<str:pk>/', views.deleteTask, name='delete-task'),
+
 ]
