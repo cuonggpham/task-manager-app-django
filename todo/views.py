@@ -115,11 +115,21 @@ def my_login(request):
 
                 auth.login(request, user)
 
-                return HttpResponse('You have logged in')
+                return redirect("dashboard")
             
-
     context = {'form':form}
 
     return render(request, 'my-login.html', context=context)
+
+# Dashboard page 
+def dashboard(request):
+
+    return render(request, 'dashboard.html')
+
+# Logout a user 
+def user_logout(request):
+    auth.logout(request)
+
+    return redirect("")
 
         
