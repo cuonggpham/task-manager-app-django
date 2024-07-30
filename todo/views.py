@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Task
-from .forms import TaskForm, CreateUserForm, LoginForm
+from .forms import CreateUserForm, LoginForm
 from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login
 
@@ -12,17 +11,9 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    # all() method 
-    # get() method
     return render(request, 'index.html')
 
-def register(request):
-    return render(request, 'register.html')
-
-def my_login(request):
-    return render(request, 'my-login.html')
-
-#create a Task
+""" #create a Task
 def createTask(request):
 
     form = TaskForm()
@@ -77,10 +68,9 @@ def deleteTask(request, pk):
     context = {'object': task}
     
     return render(request, 'delete-task.html', context=context)
-
+"""
 
 # Create a user
-
 def register(request):
 
     form = CreateUserForm()
@@ -124,7 +114,7 @@ def my_login(request):
     return render(request, 'my-login.html', context=context)
 
 # Dashboard page 
-@login_required(login_url='my-loin')
+@login_required(login_url='my-login')
 def dashboard(request):
 
     return render(request, 'dashboard.html')
